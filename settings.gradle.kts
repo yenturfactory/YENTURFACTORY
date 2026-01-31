@@ -21,3 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "YENTURFACTORY"
 include(":app")
+include(":core:network")
+include(":core:database")
+include(":core:common")
+include(":core:ui")
+include(":feature:home")
