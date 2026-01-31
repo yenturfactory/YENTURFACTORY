@@ -1,0 +1,18 @@
+name: YENTUR FACTORY CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Run Tests (GATE-39)
+        run: ./gradlew test
