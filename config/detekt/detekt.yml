@@ -1,0 +1,72 @@
+build:
+  maxIssues: 10
+  weights:
+    # complexity: 2
+    # cognitive-complexity: 2
+    # potential-bugs: 2
+    # style: 1
+    # comments: 0
+
+config:
+  validation: true
+  # The baseline file is used to ignore issues that are already present in the code.
+  # baseline: .detekt/baseline.xml
+
+processors:
+  # We can disable processors to speed up the analysis.
+  # MyProcessor:
+  #   active: false
+
+console-reports:
+  active: true
+  exclude:
+    - "detekt-html-report"
+
+comments:
+  active: true
+
+# The rulesets below are all active by default.
+# You can deactivate rulesets or individual rules by overriding them.
+style:
+  active: true
+  # For example, to deactivate a rule:
+  # ForbiddenComment:
+  #   active: false
+  # For example, to change the threshold of a rule:
+  # LongMethod:
+  #   threshold: 30
+
+  # Naming Conventions
+  FunctionNaming:
+    functionPattern: '[a-z][a-zA-Z0-9]*'
+  ClassNaming:
+    classPattern: '[A-Z][a-zA-Z0-9]*'
+  EnumNaming:
+    enumEntryPattern: '[A-Z][A-Z0-9_]*'
+
+performance:
+  active: true
+
+potential-bugs:
+  active: true
+
+complexity:
+  active: true
+  LongMethod:
+    threshold: 60
+  LargeClass:
+    threshold: 600
+  ComplexMethod:
+    threshold: 20
+
+empty-blocks:
+  active: true
+
+exceptions:
+  active: true
+
+naming:
+  active: true
+
+coroutines:
+  active: true
